@@ -1,15 +1,18 @@
 const express = require("express");
+const cors = require('cors');
 const multer = require("multer");
-const cors = require("cors");
 const docxToPDF = require("docx-pdf");
 const path = require("path");
 
 const app = express();
-const port = 3000;
 
+// Use CORS middleware right after initializing the app
 app.use(cors());
 
-// settting up the file storage
+// Setting up the file storage
+// NOTE: Render's free instances have an ephemeral file system.
+// This means the 'uploads' and 'files' folders will be cleared when the server sleeps or restarts.
+// This is okay for a quick convert-and-download process, but not for permanent storage.
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, "uploads");
@@ -20,14 +23,15 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
+
 app.post("/convertFile", upload.single("file"), (req, res, next) => {
     try {
         if (!req.file) {
             return res.status(400).json({
-                message: "No file  uploaded",
+                message: "No file uploaded",
             });
         }
-        // Defining outout file path
+        // Defining output file path
         let outoutPath = path.join(
             __dirname,
             "files",
@@ -52,6 +56,10 @@ app.post("/convertFile", upload.single("file"), (req, res, next) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
+// <-- MAJOR CHANGE HERE
+// This code uses the port Render provides, or defaults to 3000 for local development.
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
 });
