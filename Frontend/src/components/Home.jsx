@@ -19,8 +19,7 @@ function Home() {
     const formData = new FormData();
     formData.append("file", selectedFile);
     try {
-      const response = await axios.post(
-        "http://localhost:3000/convertFile",
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/convertFile`,
         formData,
         {
           responseType: "blob",
