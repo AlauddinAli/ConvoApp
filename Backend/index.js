@@ -17,7 +17,6 @@ if (!fs.existsSync(filesDir)){
 }
 const app = express();
 
-// Use CORS middleware right after initializing the app
 // More specific CORS configuration
 const corsOptions = {
   origin: "https://convoapp-frontend.onrender.com",
@@ -26,9 +25,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Setting up the file storage
-// NOTE: Render's free instances have an ephemeral file system.
-// This means the 'uploads' and 'files' folders will be cleared when the server sleeps or restarts.
-// This is okay for a quick convert-and-download process, but not for permanent storage.
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, "uploads");
@@ -42,6 +38,11 @@ const upload = multer({ storage: storage });
 
 app.post("/convertFile", upload.single("file"), (req, res, next) => {
     try {
+        // <-- I ADDED THESE TWO LINES FOR DEBUGGING -->
+        console.log("--- NEW FILE UPLOAD REQUEST RECEIVED ---");
+        console.log(req.file);
+        // <-- END OF ADDED LINES -->
+
         if (!req.file) {
             return res.status(400).json({
                 message: "No file uploaded",
@@ -72,7 +73,6 @@ app.post("/convertFile", upload.single("file"), (req, res, next) => {
     }
 });
 
-// <-- MAJOR CHANGE HERE
 // This code uses the port Render provides, or defaults to 3000 for local development.
 const PORT = process.env.PORT || 3000;
 
