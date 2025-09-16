@@ -1,9 +1,20 @@
+const fs = require("fs");
 const express = require("express");
 const cors = require('cors');
 const multer = require("multer");
 const docxToPDF = require("docx-pdf");
 const path = require("path");
 
+// Create 'uploads' and 'files' directories if they don't exist
+const uploadDir = 'uploads';
+const filesDir = 'files';
+
+if (!fs.existsSync(uploadDir)){
+    fs.mkdirSync(uploadDir);
+}
+if (!fs.existsSync(filesDir)){
+    fs.mkdirSync(filesDir);
+}
 const app = express();
 
 // Use CORS middleware right after initializing the app
