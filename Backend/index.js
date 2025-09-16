@@ -7,7 +7,12 @@ const path = require("path");
 const app = express();
 
 // Use CORS middleware right after initializing the app
-app.use(cors());
+// More specific CORS configuration
+const corsOptions = {
+  origin: "https://convoapp-frontend.onrender.com",
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 // Setting up the file storage
 // NOTE: Render's free instances have an ephemeral file system.
