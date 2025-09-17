@@ -13,6 +13,8 @@ Convert your Word documents to PDF quickly and easily with this sleek web app! B
 
 🔗 Frontend & backend integrated for smooth experience.
 
+
+
 🛠️ Tech Stack
 
 | Technology       | Role                     |
@@ -25,6 +27,8 @@ Convert your Word documents to PDF quickly and easily with this sleek web app! B
 
 
 
+
+
 🎯 How to Use
 1. Click Select Document.
 2. Pick your Word file from your device.
@@ -33,8 +37,12 @@ Convert your Word documents to PDF quickly and easily with this sleek web app! B
 5. PDF downloads automatically!
 
 
+
+
 🌐 Live Demo
 Check it here: [![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://convoapp-frontend.onrender.com)
+
+
 
 
 📦 Deployment
@@ -42,6 +50,8 @@ Check it here: [![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=f
  Frontend & backend deployed on Render.
  
  Fully functional for real-time conversion.
+
+
 
 
 💡 Pro Tips for Users
