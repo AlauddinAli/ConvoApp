@@ -28,7 +28,7 @@ Convert your Word documents to PDF quickly and easily with this sleek web app! B
 🎯 How to Use
 1. Click Select Document.
 2. Pick your Word file from your device.
-3. File shows as selected**.
+3. File shows as selected.
 4. Click Convert File.
 5. PDF downloads automatically!
 
@@ -48,7 +48,8 @@ Check it here: [![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=f
 
 Supports `.doc` & `.docx` files.
 
-Works on **desktop and mobile.
+Works on  desktop and mobile.
+
 Minimal learning curve for maximum efficiency.
 
 
