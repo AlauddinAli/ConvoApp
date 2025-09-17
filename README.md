@@ -4,8 +4,11 @@ Convert your Word documents to PDF quickly and easily with this sleek web app! B
 
 ⚡ Features
 🚀 Upload Word files and convert them to PDF instantly.
+
 📥 Automatic download of converted PDFs.
+
 🎨 Modern **Tailwind CSS** UI design, fully responsive.
+
 🔗 Frontend & backend integrated for smooth experience.
 
 🛠️ Tech Stack
