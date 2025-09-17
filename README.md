@@ -3,6 +3,7 @@ Word to PDF Converter 📝➡️📄
 Convert your Word documents to PDF quickly and easily with this sleek web app! Built with modern web technologies, this app gives you a seamless experience from file selection to download.
 
 ⚡ Features
+
 🚀 Upload Word files and convert them to PDF instantly.
 
 📥 Automatic download of converted PDFs.
@@ -36,12 +37,16 @@ Check it here: [![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=f
 
 
 📦 Deployment
- Frontend & backend deployed on **Render.
+
+ Frontend & backend deployed on Render.
+ 
  Fully functional for real-time conversion.
 
 
 💡 Pro Tips for Users
+
 Supports `.doc` & `.docx` files.
+
 Works on **desktop and mobile.
 Minimal learning curve for maximum efficiency.
 
